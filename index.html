@@ -173,6 +173,23 @@ footer a{color:var(--gold);text-decoration:none}
 @media(max-width:480px){
   .giros-grid,.vent-grid{grid-template-columns:1fr}
 }
+
+/* PLANO */
+.plano-sec{background:var(--navy2);padding:5rem 2rem}
+.plano-inner{max-width:980px;margin:0 auto;text-align:center}
+.plano-inner .sec-eyebrow{justify-content:center}
+.plano-inner .sec-title{color:var(--cream)}
+.plano-inner .sec-sub{color:rgba(247,244,237,.5);margin-left:auto;margin-right:auto}
+.plano-frame{margin-top:2rem;border:1px solid rgba(201,168,76,.2);border-radius:16px;overflow:hidden;background:var(--navy3);cursor:zoom-in}
+.plano-frame img{display:block;width:100%;height:auto}
+.plano-hint{margin-top:.75rem;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(247,244,237,.35)}
+.plano-btns{margin-top:2rem;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-download{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy);font-size:14px;font-weight:600;padding:13px 28px;border-radius:30px;text-decoration:none}
+.btn-download svg{width:16px;height:16px}
+.plano-lightbox{display:none;position:fixed;inset:0;z-index:500;background:rgba(6,10,18,.94);align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+.plano-lightbox.open{display:flex}
+.plano-lightbox img{max-width:100%;max-height:100%;border-radius:6px}
+.plano-lightbox-close{position:absolute;top:1.5rem;right:2rem;color:var(--cream);font-size:32px;line-height:1;opacity:.7}
 </style>
 </head>
 <body>
@@ -439,6 +456,30 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="vent"><div class="vent-ic">🏛️</div><h3>Respaldo SERYSI</h3><p>Desarrollado bajo el grupo corporativo SERYSI, con experiencia en desarrollo vertical residencial en la ZMG. Arrendatario respaldado por un desarrollador institucional consolidado.</p></div>
   </div>
 </section>
+
+<!-- PLANO -->
+<section class="plano-sec">
+  <div class="plano-inner">
+    <p class="sec-eyebrow">Plano de permisos</p>
+    <h2 class="sec-title">Distribución de los 10 locales</h2>
+    <p class="sec-sub">Planta baja, planta alta, alzados y detalles constructivos emitidos por la Dirección de Licencias de Zapopan.</p>
+    <div class="plano-frame" onclick="document.getElementById('planoLightbox').classList.add('open')">
+      <img src="plano-plaza-norte-web.jpg" alt="Plano de permisos Plaza Norte - distribución de locales" loading="lazy">
+    </div>
+    <p class="plano-hint">Toca la imagen para ampliar</p>
+    <div class="plano-btns">
+      <a class="btn-download" href="PLAZA_ALVA_plano_de_permisos_01.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+        Descargar plano en PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="plano-lightbox" id="planoLightbox" onclick="this.classList.remove('open')">
+  <span class="plano-lightbox-close">&times;</span>
+  <img src="plano-plaza-norte-web.jpg" alt="Plano de permisos Plaza Norte ampliado">
+</div>
 
 <!-- UBICACIÓN -->
 <section class="ubi-sec">

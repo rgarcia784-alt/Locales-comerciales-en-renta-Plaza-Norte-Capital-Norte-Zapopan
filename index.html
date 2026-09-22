@@ -42,7 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,28,46,0.9
 .hero{position:relative;min-height:100vh;overflow:hidden;background:var(--navy)}
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('plaza-norte-fachada.jpg');
+  background-image:url('plaza-alva-render-frontal.jpg');
   background-size:cover;background-position:center 40%;
   opacity:.28
 }
@@ -181,6 +181,9 @@ footer a{color:var(--gold);text-decoration:none}
 .plano-inner .sec-title{color:var(--cream)}
 .plano-inner .sec-sub{color:rgba(247,244,237,.5);margin-left:auto;margin-right:auto}
 .plano-frame{margin-top:2rem;border:1px solid rgba(201,168,76,.2);border-radius:16px;overflow:hidden;background:var(--navy3);cursor:zoom-in}
+.render-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.render-grid .plano-frame{margin-top:0}
+@media(max-width:720px){.render-grid{grid-template-columns:1fr}}
 .plano-frame img{display:block;width:100%;height:auto}
 .plano-hint{margin-top:.75rem;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(247,244,237,.35)}
 .plano-btns{margin-top:2rem;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -458,6 +461,34 @@ footer a{color:var(--gold);text-decoration:none}
 </section>
 
 <!-- PLANO -->
+<!-- RENDERS -->
+<section class="plano-sec" style="background:var(--navy2);">
+  <div class="plano-inner">
+    <p class="sec-eyebrow">Vista arquitectónica</p>
+    <h2 class="sec-title">Así lucirá Plaza Alva</h2>
+    <p class="sec-sub">Fachada, distribución de locales y balcón corrido en planta alta.</p>
+    <div class="render-grid">
+      <div class="plano-frame" onclick="document.getElementById('render1Lightbox').classList.add('open')">
+        <img src="plaza-alva-render-frontal.jpg" alt="Render fachada Plaza Alva, vista frontal en esquina" loading="lazy">
+      </div>
+      <div class="plano-frame" onclick="document.getElementById('render2Lightbox').classList.add('open')">
+        <img src="plaza-alva-render-fachada.jpg" alt="Render fachada Plaza Alva, vista de frente con locales rotulados" loading="lazy">
+      </div>
+    </div>
+    <p class="plano-hint">Toca una imagen para ampliar</p>
+  </div>
+</section>
+
+<div class="plano-lightbox" id="render1Lightbox" onclick="this.classList.remove('open')">
+  <span class="plano-lightbox-close">&times;</span>
+  <img src="plaza-alva-render-frontal.jpg" alt="Render fachada Plaza Alva ampliado, vista frontal">
+</div>
+
+<div class="plano-lightbox" id="render2Lightbox" onclick="this.classList.remove('open')">
+  <span class="plano-lightbox-close">&times;</span>
+  <img src="plaza-alva-render-fachada.jpg" alt="Render fachada Plaza Alva ampliado, vista de frente">
+</div>
+
 <section class="plano-sec">
   <div class="plano-inner">
     <p class="sec-eyebrow">Plano de permisos</p>
